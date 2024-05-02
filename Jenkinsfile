@@ -13,11 +13,6 @@ pipeline{
                     body: "Build was successful!"
                 }
             }
-        stage('Build'){
-            steps{
-                echo "Compile code and generate any necessary artifacts"
-            }
-        }
          stage('Test'){
             steps{
                 echo "Unit tests"
@@ -26,3 +21,7 @@ pipeline{
         }
         }
     }
+
+
+
+    
