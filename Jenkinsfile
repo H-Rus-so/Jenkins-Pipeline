@@ -5,18 +5,25 @@ pipeline{
             steps{
                 echo "Building..."
             }
-        }
             post{
-                success{
+                always{
                     mail to: "s216137436@deakin.edu.au",
                     subject: "Build Status Email",
-                    body: "Build was successful!"
+                    body: "Build log attached!"
                 }
             }
-         stage('Test'){
+        }
+         stage("Test"){
             steps{
                 echo "Unit tests"
                 echo "integration tests"
+            }
+                post{
+                success{
+                    mail to: "s216137436@deakin.edu.au",
+                    subject: "Test Status Email",
+                    body: "Test was successful!"
+                }
             }
         }
         }
