@@ -33,9 +33,9 @@ pipeline {
             post {
                 always {
                     emailext(
-                        to: 's216137436@deakin.edu.au',
+                        to: "s216137436@deakin.edu.au",
                         subject: "Test Stage Completed",
-                        body: """ The Test stage has completed. Please check the attached logs for more details.""",
+                        body: "The Test stage has completed. Please check the attached logs for more details.",
                         attachLog: true
                     )
                 }
