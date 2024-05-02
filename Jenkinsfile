@@ -5,6 +5,7 @@ pipeline{
             steps{
                 echo "Building..."
             }
+        }
             post{
                 success{
                     mail to: "s216137436@deakin.edu.au",
@@ -12,9 +13,8 @@ pipeline{
                     body: "Build was successful!"
                 }
             }
-                    stage('Build'){
+        stage('Build'){
             steps{
-                echo "Fetch the source code from $DIRECTORY_PATH"
                 echo "Compile code and generate any necessary artifacts"
             }
         }
@@ -24,9 +24,5 @@ pipeline{
                 echo "integration tests"
             }
         }
-          }
         }
-}
-
-
-    
+    }
