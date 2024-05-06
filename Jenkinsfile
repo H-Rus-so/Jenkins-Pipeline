@@ -13,9 +13,9 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s216137436@deakin.edu.au",
-                    subject: "Build Status Email",
-                    body: "Build log attached!"
+                    mail to: "h.subacc24@gmail.com",
+                    subject: "Build Status Email with normal mail",
+                    body: "Build log not attached"
                 }
             }
         }
@@ -34,9 +34,9 @@ pipeline {
                 always {
                     emailext(
                         attachLog: true, body: "${currentBuild.result}: ${BUILD_URL}", 
-                        compressLog: true, replyTo: 's216137436@deakin.edu.au',
+                        compressLog: true, replyTo: 'h.subacc24@gmail.com',
                         subject: "Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}", 
-                        to: 's216137436@deakin.edu.au'
+                        to: 'h.subacc24@gmail.com'
                     )
                 }
             }
@@ -54,7 +54,7 @@ pipeline {
                 always {
                 emailext (body: 'Test Message',
                 subject: 'Test Subject',
-                to: 's216137436@deakin.edu.au'
+                to: 'h.subacc24@gmail.com'
                     )
                 }
             }
