@@ -50,6 +50,14 @@ pipeline {
                     and identifying potential issues early.
                     """
             }
+                  post {
+                always {
+                emailext (body: 'Test Message',
+                subject: 'Test Subject',
+                to: 'test@example.com'
+                    )
+                }
+            }
         }
         stage('Security Scan') {
             steps {
