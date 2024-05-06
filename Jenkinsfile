@@ -29,18 +29,7 @@ pipeline {
                     Mockito complements these by providing mocking tools essential for isolated testing. 
                     Tools like Postman and SoapUI are also highly used, particularly for their user-friendly interfaces that facilitate API testing.
                     """
-            }
-            post {
-                always {
-                    emailext(
-                        to: "s216137436@deakin.edu.au",
-                        subject: "Test Stage Completed - ${currentBuild.currentResult}",
-                        body: """${currentBuild.currentResult}: The Test stage has completed. Please check the attached logs for more details.""",
-                        attachLog: true
-                    )
-                }
-            }
-        }
+                    }
            post {
                 always {
                     emailext(
@@ -51,7 +40,7 @@ pipeline {
                     )
                 }
             }
-        }
+        
         emailext 
         stage('Code Analysis') {
             steps {
