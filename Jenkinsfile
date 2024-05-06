@@ -41,6 +41,18 @@ pipeline {
                 }
             }
         }
+           post {
+                always {
+                    emailext(
+                        tattachLog: true, body: "${currentBuild.result}: ${BUILD_URL}", 
+                        compressLog: true, replyTo: 's216137436@deakin.edu.au',
+                        subject: "Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}", 
+                        to: 's216137436@deakin.edu.au'
+                    )
+                }
+            }
+        }
+        emailext 
         stage('Code Analysis') {
             steps {
                 echo """
