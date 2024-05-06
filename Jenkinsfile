@@ -54,7 +54,7 @@ pipeline {
                 always {
                 emailext (body: 'Test Message',
                 subject: 'Test Subject',
-                to: 'test@example.com'
+                to: 's216137436@deakin.edu.au'
                     )
                 }
             }
