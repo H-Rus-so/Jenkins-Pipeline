@@ -40,8 +40,7 @@ pipeline {
                     )
                 }
             }
-        
-        emailext 
+        }
         stage('Code Analysis') {
             steps {
                 echo """
@@ -92,5 +91,6 @@ pipeline {
                     """
             }
         }
-    }
+    
+}
 }
