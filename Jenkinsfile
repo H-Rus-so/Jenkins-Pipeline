@@ -33,13 +33,12 @@ pipeline {
            post {
                 always {
                     emailext(
-                         to: 'h.subacc24@gmail.com',
-    subject: "Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}",
-    body: "${currentBuild.result}: ${BUILD_URL}",
-    attachLog: true,
-    compressLog: true,
-    replyTo: 'h.subacc24@gmail.com'
-
+                        to: 'h.subacc24@gmail.com',
+                        subject: "Test Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}",
+                        body: "${currentBuild.result}: ${BUILD_URL}",
+                        attachLog: true,
+                        compressLog: true,
+                        replyTo: 'h.subacc24@gmail.com'
                     )
                 }
             }
@@ -52,15 +51,6 @@ pipeline {
                     ESLint and StyleCop extend these capabilities to JavaScript and C# projects, respectively, helping enforce specific coding standards 
                     and identifying potential issues early.
                     """
-            }
-                  post {
-                always {
-               emailext(
-    to: 'h.subacc24@gmail.com',
-    subject: 'Simple Test Email',
-    body: 'This is a test email from Jenkins.'
-)
-                }
             }
         }
         stage('Security Scan') {
@@ -103,6 +93,5 @@ pipeline {
                     """
             }
         }
-    
-}
+    }
 }
