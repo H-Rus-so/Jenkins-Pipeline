@@ -15,7 +15,7 @@ pipeline {
                 always {
                     mail to: "h.subacc24@gmail.com",
                     subject: "Build Status Email with normal mail",
-                    body: "Build log not attached"
+                    body: "CHANGED GITHUB - AUTO UPDATE"
                 }
             }
         }
